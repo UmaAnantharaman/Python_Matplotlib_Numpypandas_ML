@@ -1,0 +1,8 @@
+#Seggregate random 0's and 1's in the list and put 0's in the left and 1 in the right
+def seggregate(arr):
+    res=([x for x in arr if x==0] + [x for x in arr if x==1])
+    print(res)
+
+if __name__ == "__main__":
+    arr = [ 1,0,1,1,0,1,1,0,0,1]
+    seggregate(arr)
