@@ -1,0 +1,11 @@
+#Calculate the frequency of words
+freq={}
+line=input()
+
+for w in line.split():
+    freq[w]=freq.get(w,0)+1
+
+words = freq.keys()
+
+for word in words:
+    print("Words and frequency:",word,freq[word])
