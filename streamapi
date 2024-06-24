@@ -1,0 +1,37 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+class HelloWorld {
+    public static void main(String[] args) {
+    System.out.println("Try programiz.pro");
+    List < Integer > nums = Arrays.asList(1, 3, 6, 8, 10,10,18,18,35);
+    List < String > colors = Arrays.asList("RED", "grEEn", "white", "Orange", "pink");
+    // Convert strings to uppercase using streams
+    List < String > uppercaseStrings = colors.stream()
+      .map(String::toUpperCase)
+      .collect(Collectors.toList());
+    System.out.println("\nUppercase Strings: " + uppercaseStrings);
+    
+    // sum of even numbers
+    double sum=nums.stream()
+    .filter(num -> num%2 ==0)
+    .mapToInt(Integer::intValue)
+    .sum();
+    System.out.println("sum is"+ sum);
+    
+    //Create unique values and remove duplicates
+    List<Integer> uniquevalues = nums.stream()
+    .distinct()
+    .collect(Collectors.toList());
+    System.out.println("List of uniques: " + uniquevalues);
+    
+    //Do average of numbers
+    double average = nums.stream()
+    .mapToDouble(Integer::doubleValue)
+    .average()
+    .orElse(0.0);
+    System.out.println(average);
+    }
+}
